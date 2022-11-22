@@ -49,4 +49,3 @@ int _printf(const char *format, ...)
 	print_buff(buffer, buff_count);
 	return (buff_count);
 }
-
