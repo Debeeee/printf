@@ -1,45 +1,40 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
+#define INT_BITS (4 * 8)
+
 #include <stdarg.h>
+#include <unistd.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <stdio.h>
+#include <limits.h>
 
 /**
- * struct printHandler - struct for agrupate
- * %d, %c, etc... formatters
- * @c: character
- * @f: character func
+ * struct call - struct call
+ * @t: t - flag for data type
+ * @f: function - assocated function
  *
  */
-typedef struct printHandler
+typedef struct call
 {
-	char c;
-	int (*f)(va_list);
-} ph;
+	char t;
+	int (*f)(char *, va_list, int);
+} call_t;
 
 int _printf(const char *format, ...);
-int (*get_print(char c))(va_list);
-int _putchar(char c);
-int _puts(char *str);
-char *string_to_base(unsigned long int num, int base, bool uppercase);
-/** prints text*/
-int print_char(va_list);
-int print_string(va_list);
-int print_reverse_string(va_list);
-/** print mememory address */
-int print_address(va_list);
-/** prints nums*/
-int print_int(va_list);
-int print_unsigned(va_list);
-/** prints basics*/
-int print_hexa(va_list);
-int print_octal(va_list);
-int print_binary(va_list);
-int print_percent(va_list);
-int print_hexa_in_uppercase(va_list);
-/** utilities */
-int count_digits(int i);
-void print_number(int n);
-void print_rev_recursion(char *s);
+int buff_append(char *buff_dest, va_list arg, int buff_count, char type);
+int print_buff(char *buff, unsigned int nbuff);
+int str_len(char *s);
+char *_strcpy(char *dest, char *src);
+int print_char(char *buff_dest, va_list arg, int buff_count);
+int print_str(char *buff_dest, va_list arg, int buff_count);
+int print_int(char *buff_dest, va_list list, int buff_count);
+int print_perc(char *buff_dest, va_list arg, int buff_count);
+int print_bin(char *buff_dest, va_list arg, int buff_count);
+int print_oct(char *buff_dest, va_list arg, int buff_count);
+int print_hex(char *buff_dest, va_list arg, int buff_count);
+int print_X(char *buff_dest, va_list arg, int buff_count);
+int print_uint(char *buff_dest, va_list arg, int buff_count);
+int print_rev(char *buff_dest, va_list arg, int buff_count);
+int print_R13(char *buff_dest, va_list arg, int buff_count);
 
 #endif
