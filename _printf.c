@@ -48,8 +48,5 @@ int _printf(const char *format, ...)
 	buffer[buff_count] = '\0';
 	print_buff(buffer, buff_count);
 	return (buff_count);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 376bba663e0907b6a8e7886299124b0a9a1da23e
+
