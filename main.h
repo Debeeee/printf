@@ -38,4 +38,3 @@ int print_rev(char *buff_dest, va_list arg, int buff_count);
 int print_R13(char *buff_dest, va_list arg, int buff_count);
 
 #endif
-
