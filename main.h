@@ -36,6 +36,6 @@ int print_X(char *buff_dest, va_list arg, int buff_count);
 int print_uint(char *buff_dest, va_list arg, int buff_count);
 int print_rev(char *buff_dest, va_list arg, int buff_count);
 int print_R13(char *buff_dest, va_list arg, int buff_count);
-
+void print_string_rot13(va_list *, int, int *count);
 #endif
 
