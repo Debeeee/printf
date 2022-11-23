@@ -38,6 +38,17 @@ int print_rev(char *buff_dest, va_list arg, int buff_count);
 int print_R13(char *buff_dest, va_list arg, int buff_count);
 void print_string_rot13(va_list *, int, int *count);
 void rot13(char *s, int *count);
+void print_bin(va_list *valist, int p, int *count)
+void p_bin(unsigned int n, int *count)
+void print_uint(va_list *valist, int p, int *count)
+void print_octal(va_list *valist, int p, int *count)
+void p_octal(unsigned int n, int *count)	
+
+
+
+
+
+
 
 
 #endif
